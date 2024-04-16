@@ -35,15 +35,11 @@ class Calendar extends Component
     }
     public function getEventsProperty(){
             $this->event[]=[
-                'date' => '2024-02-29',
+                'date' => '02-29-2024',
                 'title' => 'Event 2',
                 'place' => 'UAC',
             ];
-            $this->event[] = [
-                'date' => '2024-02-29',
-                'title' => 'Event 1',
-                'place' => 'UAC',
-            ];
+
         return $this->event;
     }  
 
@@ -63,7 +59,7 @@ class Calendar extends Component
         $endDate = Carbon::createFromDate($this->year, $this->month-1,1)->endOfMonth()->format('j');
         $end = Carbon::createFromDate($this->year, $this->month,1)->startOfMonth()->format('D');
         $i = Carbon::createFromDate($this->year, $this->month,1)->endOfMonth()->format('D');
-        $today = Carbon::now()->format('Y-m-d');
+        $today = Carbon::now()->format('m-d-Y');
         if ($end == 'Sun'){
             $index = 7;
         }
@@ -90,7 +86,7 @@ class Calendar extends Component
         while($index != 0){
             $calendar[] = [
                 'day' => $x,
-                'date' => Carbon::createFromDate($this->year, $this->month-1, $x)->format('Y-m-d'),
+                'date' => Carbon::createFromDate($this->year, $this->month-1, $x)->format('m-d-Y'),
             ];
             $x = $x + 1;
             $index = $index - 1;
@@ -100,7 +96,7 @@ class Calendar extends Component
         for($x = 1; $x <= intval($y); $x++){
             $calendar[] = [
                 'day' => $x,
-                'date' => Carbon::createFromDate($this->year, $this->month, $x)->format('Y-m-d'),
+                'date' => Carbon::createFromDate($this->year, $this->month, $x)->format('m-d-Y'),
             ];
         } 
         if ($i == 'Sun'){
@@ -163,7 +159,7 @@ class Calendar extends Component
         for ($x = 1; $x <= $ind; $x++){ 
             $calendar[] = [
                 'day' => $x,
-                'date' => Carbon::createFromDate($this->year, $this->month+1, $x)->format('Y-m-d'),
+                'date' => Carbon::createFromDate($this->year, $this->month+1, $x)->format('m-d-Y'),
             ];
         }
 
@@ -172,7 +168,8 @@ class Calendar extends Component
             $part = array_slice($calendar, $x, 7);  
             $chunked_calendar[] = $part;
         } 
-        
+
+
         return view('livewire.calendar', [
             'calendar1' => $chunked_calendar,
             'slate' => $index2,
