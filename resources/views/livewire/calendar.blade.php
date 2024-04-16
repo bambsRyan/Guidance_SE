@@ -1,6 +1,6 @@
-
-<div class='h-full p-2  flex flex-col'>
-    <div class="w-96 h-full">
+<div class="flex ">
+<div class='h-full p-2 flex flex-col '>
+    <div class="w-96 h-full align-items-center">
         <div class="flex justify-between w-96">
             <button class= "btn" wire:click="subtract">Previous</button>
             <button class= "btn" wire:click="add">Next</button>
@@ -8,8 +8,8 @@
         <div class= "flex justify-center">
         <h2>{{ date('F Y', strtotime($year . '-' . $month . '-01')) }}</h2>
         </div>
-        <table class="table my-4 w-96 p-0 border border-slate-300">
-            <thead class="bg-indigo-100 h-16">
+        <table class="table mt-2 w-96 p-0 border border-slate-300">
+            <thead class="bg-indigo-100 h-12">
                 <tr>
                     <th class="p-0 w-28 h-4 justify-items-center text-center">Sun</th>
                     <th class="p-0 w-28 justify-items-center text-center">Mon</th>
@@ -26,7 +26,7 @@
                         @foreach ($week as $day)
                             @if ($slate != 0)
                                 @if(in_array($day['date'], array_column($events, 'date')))
-                                    <td x-data="{x:'{{$day['date']}}'}" class="p-0 h-16 hover:bg-gray-300 text-slate-400 relative" click:wire="events(x)" onclick="my_modal_1.showModal()"> 
+                                    <td x-data="{x:'{{$day['date']}}'}" class="p-0 h-12 hover:bg-gray-300 text-slate-400 relative" click:wire="events(x)" onclick="my_modal_1.showModal()"> 
                                         <span class="absolute top-4 right-2 w-2 h-2 rounded-full bg-red-500"></span>
                                             <dialog id="my_modal_1" class="modal">
                                                 <div class="modal-box text-black">
@@ -43,7 +43,7 @@
                                         {{ $day['day'] }}
                                     </td>
                                 @else
-                                    <td class="p-0 h-16 hover:bg-gray-300 text-slate-400 relative">
+                                    <td class="p-0 h-12 hover:bg-gray-300 text-slate-400 relative">
                                         {{ $day['day'] }}
                                     </td>
                                 @endif
@@ -54,7 +54,7 @@
                                 @if ($dates != 0)
                                     @if ($day['date'] == $today)
                                         @if(in_array($day['date'], array_column($events, 'date')))
-                                        <td x-data="{x:'{{$day['date']}}'}" class="p-0 h-16 hover:bg-gray-300 bg-indigo-300 relative" onclick="my_modal_2.showModal()">
+                                        <td x-data="{x:'{{$day['date']}}'}" class="p-0 h-12 hover:bg-gray-300 bg-indigo-300 relative" onclick="my_modal_2.showModal()">
                                             <span class="absolute top-4 right-2 w-2 h-2 rounded-full bg-red-500"></span>
                                             <dialog id="my_modal_2" class="modal">
                                                 <div class="modal-box">
@@ -70,13 +70,13 @@
                                             {{ $day['day'] }}
                                         </td>
                                         @else
-                                        <td class="p-0 h-16 hover:bg-gray-300 bg-indigo-300">
+                                        <td class="p-0 h-12 hover:bg-gray-300 bg-indigo-300">
                                             {{ $day['day'] }}
                                         </td>
                                         @endif
                                     @else
                                         @if(in_array($day['date'], array_column($events, 'date')))
-                                        <td x-data="{x:'{{$day['date']}}'}" class="p-0 h-16 hover:bg-gray-300 relative" onclick="my_modal_2.showModal()">
+                                        <td x-data="{x:'{{$day['date']}}'}" class="p-0 h-12 hover:bg-gray-300 relative" onclick="my_modal_2.showModal()">
                                             <span class="absolute top-4 right-2 w-2 h-2 rounded-full bg-red-500"></span>
                                             <dialog id="my_modal_2" class="modal">
                                                 <div class="modal-box">
@@ -92,7 +92,7 @@
                                             {{ $day['day'] }}
                                         </td>
                                         @else
-                                        <td class="p-0 h-16 hover:bg-gray-300 ">
+                                        <td class="p-0 h-12 hover:bg-gray-300 ">
                                             {{ $day['day'] }}
                                         </td>
                                         @endif
@@ -101,7 +101,7 @@
                                         $dates = $dates - 1;
                                     @endphp
                                 @else
-                                    <td class="p-0 h-16 hover:bg-gray-300 text-slate-400">
+                                    <td class="p-0 h-12 hover:bg-gray-300 text-slate-400">
                                         {{ $day['day'] }}
                                     </td>
                                 @endif
@@ -112,4 +112,10 @@
             </tbody>
         </table>
     </div>
+    <div>
+    </div>
+</div>
+<div class="border w-full m-2" >
+
+</div>
 </div>
