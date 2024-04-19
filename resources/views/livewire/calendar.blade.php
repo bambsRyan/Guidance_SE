@@ -82,29 +82,44 @@
     </div>
 </div>
 <div class="w-full border m-2 relative p-2">
-        <div class="border hidden w-full h-full " id="selectedDate">
-
+    <div class="hidden w-full h-full " id="selectedDate">
+        <div class="w-72 h-full border">
+            <img src="">
         </div>
-        <div class="border w-full h-full hidden" id="selectedDate2">
-            
+        <div>
+        <p class="font-bold">
+        Date:<span class="italic font-normal m-2 w-full break-words truncate">January 2, 2023 </span>
+        </p>
+        <p class="font-bold">
+        Date:<span class="italic font-normal m-2 w-full break-words truncate">1:00pm - 2:00pm</span>
+        </p>
+        <p class="font-bold">
+        Venue:<span class="italic font-normal m-2 w-full break-words truncate">Auditorium</span>
+        </p>
         </div>
+    </div>
+    <div class="w-full h-full justify-center items-center hidden gap-2" id="selectedDate2">
+        <h1 class="text-center text-slate-400 text-2xl">No Events Scheduled </h1>
+        <button class="btn"> Add appointment</button>
+    </div>
 </div>
 <script>
     function showModal(date) {
         let bg = document.getElementById('selectedDate');
         let bg2 = document.getElementById('selectedDate2');
         bg.classList.remove('hidden');
-        bg.classList.add('block');
+        bg.classList.add('flex');
         bg2.classList.add('hidden');
-        bg2.classList.remove('block');
+        bg2.classList.remove('flex');
     }
     function showModal2(date) {
         let bg = document.getElementById('selectedDate');
         let bg2 = document.getElementById('selectedDate2');
         bg2.classList.remove('hidden');
-        bg2.classList.add('block');
+        bg2.classList.add('flex');
+        bg2.classList.add('flex-col');
         bg.classList.add('hidden');
-        bg.classList.remove('block');
+        bg.classList.remove('flex');
     }
 </script>
 </div>
