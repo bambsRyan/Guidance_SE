@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('refers', function (Blueprint $table) {
             $table->id();
+            $table->string('referal_number');
+            $table->unsignedBigInteger('referred_by_id');
+            $table->unsignedBigInteger('referral_id');
+            $table->string('reason')->nullable();
+            $table->date('date_referred')->nullable();
+            $table->text('note')->nullable();
+            $table->string('status')->nullable();
+            $table->foreign('referred_by_id')->references('id')->on('accounts')->onDelete('cascade');
+            $table->foreign('referral_id')->references('id')->on('accounts')->onDelete('cascade');
             $table->timestamps();
         });
     }

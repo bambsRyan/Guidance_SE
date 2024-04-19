@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('request', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('account_id');
+            $table->string('meeting_type');
+            $table->unsignedBigInteger('counselor_id');
+            $table->text('note')->nullable();
+            $table->date('date_1')->nullable();
+            $table->date('date_2')->nullable();
+            $table->date('date_3')->nullable();
+            $table->string('status')->nullable();
+            $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
+            $table->foreign('counselor_id')->references('id')->on('accounts')->onDelete('cascade');
             $table->timestamps();
         });
     }
