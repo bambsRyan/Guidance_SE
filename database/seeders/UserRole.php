@@ -10,7 +10,7 @@ class UserRole extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run()
+    public function run(): void
     {
         $roles = [
             'admin',
