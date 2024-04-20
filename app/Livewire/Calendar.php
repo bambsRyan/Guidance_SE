@@ -180,6 +180,7 @@ class Calendar extends Component
             'eventOnDate' => $this->eventOnDate,
             'index' => count($this->eventOnDate),
             'num' => 0, 
+            'list' => []
         ]);
     }
 }
