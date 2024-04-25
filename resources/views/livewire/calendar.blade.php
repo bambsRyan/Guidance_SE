@@ -23,21 +23,14 @@
             <tbody>
                 @foreach ($calendar1 as $week)
                     <tr class="text-center">
-                        @foreach ($week as $day)
+                        @foreach ($week as $day)   <!-- SUFFIX OF THE CALENDAR -->
                             @if ($slate != 0)
-                                @if(in_array($day['date'], array_column($events, 'date')))
-                                    @foreach ($events as $event)
-                                        @if ($event['date'] == $day['date'])
-                                         @php 
-                                            $list += $event;
-                                        @endphp
-                                        @endif
-                                    @endforeach
-                                        <td x-data="{x:'{{$day['date']}}'}" class="p-0 h-12 hover:bg-gray-300 text-slate-400 relative" @click="showModal(x)"> 
-                                            <span class="absolute top-4 right-2 w-2 h-2 rounded-full bg-red-500"></span>
-                                            {{ $day['day'] }}
-                                        </td>
-                                @else
+                                @if(in_array($day['date'], array_column($events, 'date'))) <!-- CHECK IF THE DATE IS IN THE EVENTS -->
+                                    <td x-data="{x:'{{$day['date']}}'}" class="p-0 h-12 hover:bg-gray-300 text-slate-400 relative" @click="showModal(x)"> 
+                                        <span class="absolute top-4 right-2 w-2 h-2 rounded-full bg-red-500"></span>
+                                        {{ $day['day'] }}
+                                    </td>
+                                @else   <!-- IF THE DATE IS NOT IN THE EVENTS -->
                                     <td x-data="{x:'{{$day['date']}}'}" class="p-0 h-12 hover:bg-gray-300 text-slate-400 relative" @click="showModal2(x)">
                                         {{ $day['day'] }}
                                     </td>
@@ -46,8 +39,8 @@
                                     $slate = $slate - 1;
                                 @endphp
                             @else
-                                @if ($dates != 0)
-                                    @if ($day['date'] == $today)
+                                @if ($dates != 0) <!-- CHECK IF THE DATE IS NOT EMPTY -->
+                                    @if ($day['date'] == $today) <!-- CHECK IF THE DATE IS TODAY -->
                                         @if(in_array($day['date'], array_column($events, 'date')))
                                         <td x-data="{x:'{{$day['date']}}'}" class="p-0 h-12 hover:bg-gray-300 bg-indigo-300 relative" @click="showModal(x)">
                                             <span class="absolute top-4 right-2 w-2 h-2 rounded-full bg-red-500"></span>
@@ -74,9 +67,16 @@
                                         $dates = $dates - 1;
                                     @endphp
                                 @else
-                                    <td x-data="{x:'{{$day['date']}}'}" class="p-0 h-12 hover:bg-gray-300 text-slate-400" @click="showModal2(x)">
-                                        {{ $day['day'] }}
-                                    </td>
+                                    @if(in_array($day['date'], array_column($events, 'date'))) <!-- CHECK IF THE DATE IS IN THE EVENTS -->
+                                        <td x-data="{x:'{{$day['date']}}'}" class="p-0 h-12 hover:bg-gray-300 text-slate-400 relative" @click="showModal(x)"> 
+                                            <span class="absolute top-4 right-2 w-2 h-2 rounded-full bg-red-500"></span>
+                                            {{ $day['day'] }}
+                                        </td>
+                                    @else   <!-- IF THE DATE IS NOT IN THE EVENTS -->
+                                        <td x-data="{x:'{{$day['date']}}'}" class="p-0 h-12 hover:bg-gray-300 text-slate-400" @click="showModal2(x)">
+                                            {{ $day['day'] }}
+                                        </td>
+                                    @endif 
                                 @endif
                             @endif
                         @endforeach
@@ -92,7 +92,7 @@
             <img src="">
         </div>
         <div class="m-2 gap-2 flex flex-col">
-        <p class="font-bold">Event Number:<span class="italic font-normal m-2 w-full break-words truncate">001 </span> </p>
+        <p class="font-bold">Event Number:<span class="italic font-normal m-2 w-full break-words truncate">$ </span> </p>
         <p class="font-bold">Title:<span class="italic font-normal m-2 w-full break-words truncate">A very good title </span> </p>
         <p class="font-bold ">Description:<span class="italic font-normal m-2 w-full break-words truncate">A very long description </span> </p>
         <p class="font-bold">Date:<span class="italic font-normal m-2 w-full break-words truncate">January 2, 2023 </span> </p>
@@ -126,27 +126,27 @@
                             <input type="text" class="grow"/>
                         </label>
                         <select class="select select-bordered w-full gap-2 text-md">
-                            <option disabled selected>Normal</option>
+                            <option disabled selected>Select Counsellor</option>
                             <option>Normal Apple</option>
                             <option>Normal Orange</option>
                             <option>Normal Tomato</option>
                         </select>
                         <select class="select select-bordered w-full gap-2 text-md">
-                            <option disabled selected>Normal</option>
+                            <option disabled selected>Select Setup</option>
                             <option>Normal Apple</option>
                             <option>Normal Orange</option>
                             <option>Normal Tomato</option>
                         </select>
                         <label class="input input-bordered flex items-center w-full gap-2">
-                            Guardian Name 
+                            Guardian Name:
                             <input type="text" class="grow"/>
                         </label>
                         <label class="input input-bordered flex items-center w-full gap-2">
-                            Relationship to Guardian
+                            Relationship to Guardian:
                             <input type="text" class="grow"/>
                         </label>
                         <label class="input input-bordered flex items-center w-full gap-2">
-                            Guardian Contact Number
+                            Guardian Contact Number:
                             <input type="text" class="grow"/>
                         </label>
                     </div>
