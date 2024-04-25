@@ -4,6 +4,7 @@ namespace App\Livewire;
 use Carbon\Carbon;
 use Livewire\Component;
 
+
 class Calendar extends Component
 {
     public $month;
@@ -35,11 +36,10 @@ class Calendar extends Component
     }
     public function getEventsProperty(){
             $this->event[]=[
-                'date' => '02-29-2024',
+                'date' => '03-01-2024',
                 'title' => 'Event 2',
                 'place' => 'UAC',
             ];
-
         return $this->event;
     }  
 
@@ -51,7 +51,6 @@ class Calendar extends Component
             }
         }
     }
-
     public function render()
     {
         $calendar = [];
