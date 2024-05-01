@@ -36,7 +36,7 @@ class Calendar extends Component
     }
     public function getEventsProperty(){
             $this->event[]=[
-                'date' => '03-01-2024',
+                'date' => '05-01-2024',
                 'title' => 'Event 2',
                 'place' => 'UAC',
             ];

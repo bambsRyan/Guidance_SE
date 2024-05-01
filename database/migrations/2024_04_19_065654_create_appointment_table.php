@@ -21,7 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('counselor_id');
             $table->text('note')->nullable();
             $table->string('status')->nullable();
-            $table->foreign('request_id')->references('id')->on('requests')->onDelete('cascade');
+            $table->foreign('request_id')->references('id')->on('request')->onDelete('cascade');
             $table->foreign('counselor_id')->references('id')->on('accounts')->onDelete('cascade');
             $table->timestamps();
         });
