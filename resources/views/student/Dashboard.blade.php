@@ -17,7 +17,7 @@
                     <div class="flex-1 flex flex-col">
                         @livewire('calendar')
                     </div>
-                    <div class="flex flex-col flex-1 p-2">
+                    <div class="flex flex-col flex-1">
                         @livewire('history')
                         @livewire('past-appointment')
                     </div>

@@ -86,8 +86,8 @@
         </table>
     </div>
 </div>
-<div class="w-full border m-2 relative p-2 ">
-    <div class="w-full h-full justify-center items-center hidden gap-2" id="selectedDate">
+<div class="w-full border m-2 ">
+    <div class="w-full h-full justify-center items-center hidden gap-2" id="selectedDate" wire:ignore.self>
         <div class="w-72 h-full">
             <img src="">
         </div>
@@ -101,10 +101,13 @@
         </p>
         </div>
     </div>
-    <div class="w-full h-full justify-center items-center hidden gap-2" id="selectedDate2">
+    <div class="w-full h-full justify-center items-center hidden gap-2" id="selectedDate2" wire:ignore.self>
         <h1 class="text-center text-slate-400 text-2xl">No Events Scheduled </h1>
+        <button> <!-- IF ELSE MO TONG DALAWANG BUTTON PAR SKRT SRKT-->
+            <a href="/CPI" class="btn">Fill up CPI Form</a>
+        </button>
         <button class="btn" onclick="my_modal_1.showModal()"> Add appointment</button>
-        <dialog id="my_modal_1" class="modal">
+        <dialog wire:ignore.self id="my_modal_1" class="modal">
             <div class="bg-white w-3/4 p-2 border rounded-lg">
                 <div class="flex justify-center items-center my-5">
                     <span class="text-2xl">
@@ -163,7 +166,34 @@
                             College:
                             <input type="text" class="grow"/>
                         </label>
-                        <input class="shadow border rounded w-full h-12 border-slate-400 text-gray-700 focus:outline-none focus:shadow-outline p-4" id="date1" name="date1" type="datetime-local">
+                        <input class="shadow border rounded w-full h-12 border-slate-400 text-gray-700 focus:outline-none focus:shadow-outline p-4" id="date" name="date" type="date">
+                        <div class="flex w-full gap-1">
+                            <input class="shadow border rounded w-full h-12 border-slate-400 text-gray-700 focus:outline-none focus:shadow-outline p-4" id="time" name="time" type="time" disabled>
+                            <button class="btn" wire:click="avail('03-01-2024')" onclick=" my_modal_4.showModal()">Check time</button>
+                            <dialog wire:ignore.self id="my_modal_4" class="modal">
+                                <div class="modal-box w-full">
+                                @if ($availTime == null)
+                                    <div class="w-full text-center p-2 mb-2 bg-slate-200 border rounded-sm">
+                                    No Available Time
+                                    </div>
+                                @else
+                                    <div class="w-full text-center p-2 mb-2 bg-slate-200 border rounded-sm">
+                                    Available Time
+                                    </div>
+                                    @php
+                                    $ctr = 0;
+                                    @endphp
+                                @foreach($availTime as $times)
+                                        <button id ="{{$ctr}}"class="btn w-full" x-data= "{time:'{{$times}}'}" onclick="setTime()" value="{{$times}}">{{$times}}
+                                        </button>
+                                        @php
+                                            $ctr = $ctr + 1;
+                                        @endphp
+                                @endforeach
+                                @endif
+                                </div>
+                            </dialog>
+                        </div>
                         <textarea class="textarea textarea-bordered w-full h-40" placeholder="Leave a Note:"></textarea>
                     </div>
                 </div>
@@ -173,9 +203,58 @@
                 </div>
             </div>
         </dialog>
+
     </div>
 </div>
 <script>
+    function setTime(times){
+        let a = document.getElementById('0')
+        let b = document.getElementById('1')
+        let c = document.getElementById('2')
+        let d = document.getElementById('3')
+        let e = document.getElementById('4')
+        let f = document.getElementById('5')
+        let g = document.getElementById('6')
+        let h = document.getElementById('7')
+        let i = document.getElementById('8')
+        let time = document.getElementById('time')
+        a.addEventListener('click', function(){
+            time.value = a.value.toString().replace('AM', '').replace('PM', '').replace(' ', '');
+            my_modal_4.close();
+        });
+        b.addEventListener('click', function(){
+            time.value = b.value.toString().replace('AM', '').replace('PM', '').replace(' ', '');
+            my_modal_4.close();
+        });
+        c.addEventListener('click', function(){
+            time.value = c.value.toString().replace('AM', '').replace('PM', '').replace(' ', '');
+            my_modal_4.close();
+        });
+        d.addEventListener('click', function(){
+            time.value = d.value.toString().replace('AM', '').replace('PM', '').replace(' ', '');
+            my_modal_4.close();
+        });
+        e.addEventListener('click', function(){
+            time.value = e.value.toString().replace('AM', '').replace('PM', '').replace(' ', '');
+            my_modal_4.close();
+        });
+        f.addEventListener('click', function(){
+            time.value = f.value.toString().replace('AM', '').replace('PM', '').replace(' ', '');
+            my_modal_4.close();
+        });
+        g.addEventListener('click', function(){
+            time.value = g.value.toString().replace('AM', '').replace('PM', '').replace(' ', '');
+            my_modal_4.close();
+        });
+        h.addEventListener('click', function(){
+            time.value = h.value.toString().replace('AM', '').replace('PM', '').replace(' ', '');
+            my_modal_4.close();
+        });
+        i.addEventListener('click', function(){
+            time.value = i.value.toString().replace('AM', '').replace('PM', '').replace(' ', '');
+            my_modal_4.close();
+        });
+    }
     function showModal(date) {
         let bg = document.getElementById('selectedDate');
         let bg2 = document.getElementById('selectedDate2');

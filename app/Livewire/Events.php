@@ -1,17 +1,15 @@
 <?php
 
 namespace App\Livewire;
-use Carbon\Carbon;
+
 use Livewire\Component;
-
-
-class Calendar extends Component
+use Carbon\Carbon;
+class Events extends Component
 {
     public $month;
     public $year;
     public $event = [];
     public $eventOnDate = [];
-
     public $time =[
         '08:00 AM',
         '09:00 AM',
@@ -22,8 +20,8 @@ class Calendar extends Component
         '14:00 PM',
         '15:00 PM',
         '16:00 PM',
-    ];
-    public $consultations =[ //Consultation to par ng counselor
+    ];  
+    public $consultations =[
         [
             'Date' => '03-01-2024',
             'Time' => '08:00 AM',
@@ -59,14 +57,13 @@ class Calendar extends Component
             'Time' => '10:00 AM',
             'Name' => 'Jane Doe',
         ]
-    ];  
-    public $availTime =[];
-
+    ];
     public function mount()
     {
         $this->month = date('m');
         $this->year = date('Y');
     }
+    
     public function add(){
         if ($this->month == 12){
             $this->month = 1;
@@ -85,18 +82,6 @@ class Calendar extends Component
             $this->month = $this->month - 1;
         }
     }
-    public function avail($date){
-        $this->availTime = [];
-        foreach($this->time as $time){
-            $this->availTime[] = $time;
-        }
-        foreach($this->consultations as $consultation){
-            if($consultation['Date'] == $date){
-                $this->availTime = array_diff($this->availTime, [$consultation['Time']]);
-            }
-        }
-    }
-
     public function getEventsProperty(){
             $this->event[]=[
                 'date' => '03-01-2024',
@@ -232,7 +217,7 @@ class Calendar extends Component
         } 
 
 
-        return view('livewire.calendar', [
+        return view('livewire.events', [
             'calendar1' => $chunked_calendar,
             'slate' => $index2,
             'dates' => intval($y),
@@ -242,8 +227,7 @@ class Calendar extends Component
             'eventOnDate' => $this->eventOnDate,
             'index' => count($this->eventOnDate),
             'num' => 0, 
-            'list' => [],
-
+            'list' => []
         ]);
     }
 }
