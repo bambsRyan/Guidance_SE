@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Carbon\Carbon;
 use Livewire\Component;
 use App\Models\Event;
+use App\Models\Appointment;
 
 
 class Calendar extends Component
@@ -13,6 +14,8 @@ class Calendar extends Component
     public $year;
     public $event = [];
     public $eventOnDate = [];
+
+
     public function mount()
     {
         $this->month = date('m');
@@ -36,6 +39,49 @@ class Calendar extends Component
             $this->month = $this->month - 1;
         }
     }
+
+    public $name;
+    public $studentNumber;
+    public $contactNumber;
+    public $counsellor;
+    public $setup;
+    public $guardianName;
+    public $relationshipToGuardian;
+    public $guardianContact;
+    public $course;
+    public $email;
+    public $college;
+    public $date;
+    public $note;
+
+
+    public function schedule()
+    {
+
+        // Validate input fields if needed
+
+        // Store data in the database
+        $appointment = new Appointment();
+        $appointment->name = $this->name;
+        $appointment->student_number = $this->studentNumber;
+        $appointment->contact_number = $this->contactNumber;
+        $appointment->counsellor = $this->counsellor;
+        $appointment->setup = $this->setup;
+        $appointment->guardian_name = $this->guardianName;
+        $appointment->relationship_to_guardian = $this->relationshipToGuardian;
+        $appointment->guardian_contact = $this->guardianContact;
+        $appointment->course = $this->course;
+        $appointment->email = $this->email;
+        $appointment->college = $this->college;
+        $appointment->date = $this->date;
+        $appointment->note = $this->note;
+
+        $appointment->save();
+
+        // Reset input fields after submission
+        $this->reset();
+    }
+
 
     public function showEvents()
     {

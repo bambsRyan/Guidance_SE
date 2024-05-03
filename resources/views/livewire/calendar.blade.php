@@ -115,23 +115,23 @@
                         <div class="w-3/5 m-2 flex flex-col gap-3 items-center p-2">
                             <label class="input input-bordered flex items-center w-full gap-2">
                                 Name:
-                                <input type="text" class="grow" />
+                                <input wire:model="name" type="text" class="grow" />
                             </label>
                             <label class="input input-bordered flex items-center w-full gap-2">
                                 Student Number:
-                                <input type="text" class="grow" />
+                                <input wire:model="studentNumber" type="text" class="grow" />
                             </label>
                             <label class="input input-bordered flex items-center w-full gap-2">
                                 Contact Number:
-                                <input type="text" class="grow" />
+                                <input wire:model="contactNumber" type="text" class="grow" />
                             </label>
-                            <select class="select select-bordered w-full gap-2 text-md">
+                            <select wire:model="counsellor" class="select select-bordered w-full gap-2 text-md">
                                 <option disabled selected>Select Counsellor</option>
                                 <option>Normal Apple</option>
                                 <option>Normal Orange</option>
                                 <option>Normal Tomato</option>
                             </select>
-                            <select class="select select-bordered w-full gap-2 text-md">
+                            <select wire:model="setup" class="select select-bordered w-full gap-2 text-md">
                                 <option disabled selected>Select Setup</option>
                                 <option>Normal Apple</option>
                                 <option>Normal Orange</option>
@@ -139,37 +139,37 @@
                             </select>
                             <label class="input input-bordered flex items-center w-full gap-2">
                                 Guardian Name:
-                                <input type="text" class="grow" />
+                                <input wire:model="guardianName" type="text" class="grow" />
                             </label>
                             <label class="input input-bordered flex items-center w-full gap-2">
                                 Relationship to Guardian:
-                                <input type="text" class="grow" />
+                                <input wire:model="relationshipToGuardian" type="text" class="grow" />
                             </label>
                             <label class="input input-bordered flex items-center w-full gap-2">
                                 Guardian Contact Number:
-                                <input type="text" class="grow" />
+                                <input wire:model="guardianContact" type="text" class="grow" />
                             </label>
                         </div>
                         <div class="w-3/5 m-2 flex flex-col gap-3 items-center p-2">
                             <label class="input input-bordered flex items-center w-full gap-2">
                                 Course:
-                                <input type="text" class="grow" />
+                                <input wire:model="course" type="text" class="grow" />
                             </label>
                             <label class="input input-bordered flex items-center w-full gap-2">
                                 Email:
-                                <input type="text" class="grow" />
+                                <input wire:model="email" type="text" class="grow" />
                             </label>
                             <label class="input input-bordered flex items-center w-full gap-2">
                                 College:
-                                <input type="text" class="grow" />
+                                <input wire:model="college" type="text" class="grow" />
                             </label>
-                            <input class="shadow border rounded w-full h-12 border-slate-400 text-gray-700 focus:outline-none focus:shadow-outline p-4" id="date1" name="date1" type="datetime-local">
-                            <textarea class="textarea textarea-bordered w-full h-40" placeholder="Leave a Note:"></textarea>
+                            <input wire:model="date" class="shadow border rounded w-full h-12 border-slate-400 text-gray-700 focus:outline-none focus:shadow-outline p-4" id="date1" name="date1" type="datetime-local">
+                            <textarea wire:model="note" class="textarea textarea-bordered w-full h-40" placeholder="Leave a Note:"></textarea>
                         </div>
                     </div>
                     <div class="flex justify-end items-end w-full mt-10 mb-6 h-10 gap-2 px-10">
-                        <button class=" px-2 btn btn-active text-white rounded-md text-md  h-full">Cancel</button>
-                        <button class=" px-2 btn btn-success text-white rounded-md text-md h-full">Schedule</button>
+                        <button id="closeButton" onclick="closeModal()" class=" px-2 btn btn-active text-white rounded-md text-md  h-full">Cancel</button>
+                        <button wire:click="schedule" class=" px-2 btn btn-success text-white rounded-md text-md h-full">Schedule</button>
                     </div>
                 </div>
             </dialog>
@@ -196,6 +196,11 @@
             bg2.classList.add('flex-col');
             bg.classList.add('hidden');
             bg.classList.remove('flex');
+        }
+
+        function closeModal() {
+            let modal1 = document.getElementById('my_modal_1');
+            modal1.close();
         }
     </script>
 </div>
