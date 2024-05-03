@@ -199,7 +199,21 @@
                 </div>
                 <div class="flex justify-end items-end w-full mt-10 mb-6 h-10 gap-2 px-10">
                     <button class=" px-2 btn btn-active text-white rounded-md text-md  h-full">Cancel</button>
-                    <button class=" px-2 btn btn-success text-white rounded-md text-md h-full">Schedule</button>
+                    <button class=" px-2 btn btn-success text-white rounded-md text-md h-full" onclick="submit.showModal()">Schedule</button>
+                    <dialog id="submit" class="modal">
+                            <div class="modal-box">
+                                <h3 class="font-bold text-lg">Confirmation!</h3>
+                                <p class="py-4">Are you sure to cancel the appointment on LAGAY MO DATE DITO PRE?</p>
+                                <div class="modal-action">
+                                    <form method="dialog">
+                                        <button class="btn">Close</button>
+                                    </form>
+                                    <form method="dialog">
+                                        <button class="btn btn-success">Add Appointment</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
                 </div>
             </div>
         </dialog>

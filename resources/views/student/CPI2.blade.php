@@ -583,14 +583,14 @@
                         </div>
                         <div class="flex w-4/5  justify-center ">
                             <span class="w-full my-2 ">
-                                <label for="char" class="">Special Skills/Talents/Hobbies/Special Interests:</label>
-                                <textarea id="char" class="textarea textarea-bordered w-full my-2"></textarea>
+                                <label for="skills" class="">Special Skills/Talents/Hobbies/Special Interests:</label>
+                                <textarea id="skills" class="textarea textarea-bordered w-full my-2"></textarea>
                             </span>
                         </div>
                         <div class="flex w-4/5  justify-center ">
                             <span class="w-full my-2 ">
-                                <label for="char" class="">Ambitions/Goals:</label>
-                                <textarea id="char" class="textarea textarea-bordered w-full my-2"></textarea>
+                                <label for="ambitions" class="">Ambitions/Goals:</label>
+                                <textarea id="ambitions" class="textarea textarea-bordered w-full my-2"></textarea>
                             </span>
                         </div>
                     </div>
@@ -598,7 +598,8 @@
                 <div class="flex-1 flex justify-center items-center w-full flex-col">
                     <div class="flex w-full justify-center">
                         <input type="submit" id="prev" value="Prev" class="btn btn-outline mx-80">
-                        <input type="submit" id="next" value="Next" class="btn btn-outline mx-80">
+                        <button id="next2"class="hidden btn btn-outline mx-80">Next</button>
+                        <input type="submit" id="next" value="Submit" class="hidden btn btn-outline mx-80">
                     </div>
                 </div>
             </div>
@@ -616,8 +617,9 @@
         showTab(currentTab);
 
         function showTab(n) {
-            var next = document.getElementById("next");
+            var submit = document.getElementById("next");
             var prev = document.getElementById("prev");
+            var next = document.getElementById("next2");
             var x = document.getElementById("tab");
             if (x.children[currentTab].id === 'child') {
                 x.children[currentTab].classList.remove("hidden");
@@ -628,9 +630,20 @@
             } else {
                 prev.disabled=false;
             }
+            if (n === x.children.length - 2) {
+                submit.classList.remove("hidden");
+                submit.classList.add("flex");
+                next.classList.add("hidden");
+                next.classList.remove("flex");
+            } else if (n >=0){
+                next.classList.remove("hidden");
+                next.classList.add("flex");
+                submit.classList.add("hidden");
+                submit.classList.remove("flex");
+            }
 
         }
-        var next = document.getElementById("next");
+        var next = document.getElementById("next2");
         var prev = document.getElementById("prev");
         next.addEventListener("click", function() {
             var x = document.getElementById("tab");

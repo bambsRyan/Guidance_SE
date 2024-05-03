@@ -8,6 +8,21 @@
         <title>Laravel</title>
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
+                <style>
+            .scroll-container::-webkit-scrollbar {
+                width: 8px;
+            }
+            .scroll-container::-webkit-scrollbar-track {
+                background-color: #f1f1f1;
+            }
+            .scroll-container::-webkit-scrollbar-thumb {
+                background-color: #888;
+                border-radius: 10px;
+            }
+            .scroll-container::-webkit-scrollbar-thumb:hover {
+                background-color: #555; 
+            }
+            </style>
     </head>
     <body class="font-sans antialiased">
     <div class="h-screen w-screen flex flex-col">
@@ -18,8 +33,8 @@
                         @livewire('calendar')
                     </div>
                     <div class="flex flex-col flex-1">
-                        @livewire('history')
                         @livewire('past-appointment')
+                        @livewire('history')
                     </div>
                 </div>
             </div>

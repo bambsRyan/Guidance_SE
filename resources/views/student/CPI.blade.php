@@ -44,12 +44,12 @@
                             By checking 'I Confirm" below, I understand that it will indicate that I have read and understood the above statements regarding the purpose disclosure, processing, and access of this record, services, confidentiality, and informed consent. I agree to participate and undergo the programs and services of the OGTS.
                             </span>
                             <div class="flex justify-center">
-                            <form action="#" class="flex justify-center flex-col gap-2">
+                            <form action="/info" class="flex justify-center flex-col gap-2">
                                 <div class="items-center flex">
                                 <input type="checkbox" class="checkbox" required />
                                 <label for="confirm" class="text-xl text-center">I Confirm</label><br>
                                 </div>
-                                <input type="submit" value="Submit" class="btn btn-outline" href="/">
+                                <input type="submit" value="Submit" class="btn btn-outline" >
                             </form>
                             </div>
                         </div>
