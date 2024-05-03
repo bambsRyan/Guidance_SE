@@ -24,7 +24,7 @@
                         <ul 
                     x-show="open"
                     style="display:none;"
-                    x-data="{name:'Joe Mezulla'}"
+                    x-data="{name: '{{ $account->first_name }} {{ $account->last_name }}'}"
                     tabindex="-1" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-auto min-w-56 absolute end-5 top-16 border bodrer-slate-400">
                         <li class="text-base shadow-md mb-2 rounded-lg" tabindex="0"><a x-text="name"></a></li>
                         <hr class="mb-1 w-11/12 mx-auto"><hr class="mb-1 w-11/12 mx-auto">

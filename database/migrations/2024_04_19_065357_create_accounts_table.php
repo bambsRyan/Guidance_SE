@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
-            $table->string('account_number');
+            $table->string('student_id');
             $table->string('last_name');
             $table->string('first_name');
             $table->string('middle_name')->nullable();
@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('civil_status')->nullable();
             $table->string('email_address')->unique();
             $table->string('password');
+            $table->string('account_status')->default('new');
             $table->timestamps();
         });
     }

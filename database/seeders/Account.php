@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class Account extends Seeder
 {
@@ -14,11 +15,11 @@ class Account extends Seeder
     {
         $dummyaccounts = [
             [
-                'account_number' => '1234567890',
+                'student_id' => '202012021',
                 'last_name' => 'Doe',
                 'first_name' => 'John',
                 'middle_name' => 'Smith',
-                'position' => 'Manager',
+                'position' => 'Student',
                 'college' => 'Engineering',
                 'course' => 'Computer Science',
                 'sex' => 'male',
@@ -32,11 +33,11 @@ class Account extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'account_number' => '0987654321',
+                'student_id' => '202120122',
                 'last_name' => 'Doe',
                 'first_name' => 'Jane',
                 'middle_name' => 'Smith',
-                'position' => 'Manager',
+                'position' => 'Student',
                 'college' => 'Engineering',
                 'course' => 'Computer Science',
                 'sex' => 'male',
@@ -50,11 +51,11 @@ class Account extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'account_number' => '0987654321',
+                'student_id' => '202021212',
                 'last_name' => 'Doe',
                 'first_name' => 'Justin',
                 'middle_name' => 'Smith',
-                'position' => 'Manager',
+                'position' => 'Student',
                 'college' => 'Engineering',
                 'course' => 'Computer Science',
                 'sex' => 'male',
@@ -68,11 +69,11 @@ class Account extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'account_number' => '0987654321',
+                'student_id' => '202020222',
                 'last_name' => 'Doe',
                 'first_name' => 'Jasmine',
                 'middle_name' => 'Smith',
-                'position' => 'Manager',
+                'position' => 'Student',
                 'college' => 'Engineering',
                 'course' => 'Computer Science',
                 'sex' => 'male',

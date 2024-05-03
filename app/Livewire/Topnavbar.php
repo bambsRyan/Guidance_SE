@@ -3,11 +3,13 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\Accounts;
 
 class Topnavbar extends Component
 {
     public function render()
     {
-        return view('livewire.topnavbar');
+        $account = Accounts::where('student_id', '202021212')->first();
+        return view('livewire.topnavbar', compact('account'));
     }
 }
