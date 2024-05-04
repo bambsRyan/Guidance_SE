@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('relationship_to_ptc')->nullable();
             $table->string('guardian_name')->nullable();
             $table->string('guardian_address')->nullable();
+            $table->string('guardian_contact')->nullable();
             $table->string('guardian_occupation')->nullable();
             $table->string('father_address')->nullable();
             $table->string('mother_address')->nullable();
@@ -35,7 +36,7 @@ return new class extends Migration
             $table->string('mother_occupation')->nullable();
             $table->string('parents_relation_status')->nullable();
             $table->string('living_arrangement')->nullable();
-            $table->integer('sibling_rank')->nullable();
+            $table->string('sibling_rank')->nullable();
             $table->string('sibling1_name')->nullable();
             $table->string('sibling1_sex')->nullable();
             $table->integer('sibling1_age')->nullable();
@@ -48,23 +49,25 @@ return new class extends Migration
             $table->string('sibling3_sex')->nullable();
             $table->integer('sibling3_age')->nullable();
             $table->string('sibling3_school_comp')->nullable();
-            // Define fields for other siblings similarly
             $table->string('elem_school')->nullable();
             $table->string('elem_achievements')->nullable();
             $table->string('secondary_school')->nullable();
             $table->string('secondary_achievements')->nullable();
             $table->string('tertiary_school')->nullable();
             $table->string('tertiary_achievements')->nullable();
+            $table->string('other_school')->nullable();
+            $table->string('other_achievements')->nullable();
             $table->string('current_health')->nullable();
             $table->string('physical_acts')->nullable();
-            $table->boolean('under_doc_care')->nullable();
-            $table->string('doctor_name')->nullable();
+            $table->string('under_doc_care')->nullable();
             $table->string('doc_reason')->nullable();
-            $table->boolean('taking_medication')->nullable();
+            $table->string('taking_medication')->nullable();
             $table->string('medication_reason')->nullable();
             $table->string('medicine')->nullable();
             $table->string('received_services')->nullable();
+            $table->string('received_services_reason')->nullable();
             $table->string('received_psych_services')->nullable();
+            $table->string('received_psych_services_reason')->nullable();
             $table->string('course_choice1')->nullable();
             $table->string('course_choice2')->nullable();
             $table->string('course_choice3')->nullable();

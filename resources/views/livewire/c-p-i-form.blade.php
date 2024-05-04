@@ -52,35 +52,35 @@
                             <div class="flex w-full gap-10 justify-between px-20">
                                 <span class="w-full">
                                     <label for="tel_no">Telephone Number:</label>
-                                    <input type="tel" id="tel_no" class="input h-10 input-bordered w-full max-w-lg my-1" wire:model="contact_number" />
+                                    <input type="tel" id="tel_no" class="input h-10 input-bordered w-full max-w-lg my-1" wire:model="tel_number" />
                                 </span>
                                 <span class="w-full">
                                     <label for="mob_num">Mobile Phone Number</label>
-                                    <input type="tel" id="mob_num" class="input h-10 input-bordered w-full max-w-lg my-1" />
+                                    <input type="tel" id="mob_num" class="input h-10 input-bordered w-full max-w-lg my-1" wire:model="contact_number" />
                                 </span>
                             </div>
                             <div class="flex w-full gap-10 justify-between px-20">
                                 <span class="w-full">
                                     <label for="present_add">Present Address:</label>
-                                    <input type="text" id="present_add" class="input h-10 input-bordered w-full max-w-lg my-1" />
+                                    <input type="text" id="present_add" class="input h-10 input-bordered w-full max-w-lg my-1" wire:model="current_address" />
                                 </span>
                                 <span class="w-full">
                                     <label for="permanent_add">Permanent Address:</label>
-                                    <input type="text" id="permanent_add" class="input h-10 input-bordered w-full max-w-lg my-1" />
+                                    <input type="text" id="permanent_add" class="input h-10 input-bordered w-full max-w-lg my-1" wire:model="permanent_address" />
                                 </span>
                             </div>
                             <div class="flex w-full gap-10 justify-center pl-20 pr-32">
                                 <span class="w-full">
                                     <label for="contact_person">Contact Person in case of Emergency:</label>
-                                    <input type="text" id="contact_person" class="input h-10 input-bordered w-full max-w-sm my-1" />
+                                    <input type="text" id="contact_person" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="ptc_name" />
                                 </span>
                                 <span class="w-full">
                                     <label for="rel_to_counselee">Relationship to the Counselee:</label>
-                                    <input type="text" id="rel_to_counselee" class="input h-10 input-bordered w-full max-w-sm my-1" />
+                                    <input type="text" id="rel_to_counselee" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="relationship_to_ptc" />
                                 </span>
                                 <span class="w-full">
                                     <label for="contact">Contact Number:</label>
-                                    <input type="text" id="contact" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="contact_number" />
+                                    <input type="text" id="contact" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="ptc_contact" />
                                 </span>
                             </div>
                         </div>
@@ -101,55 +101,55 @@
                             <div class="flex w-full gap-10 justify-center">
                                 <span class="w-72">
                                     <label for="father">Father's Name:</label>
-                                    <input type="text" id="father" class="input h-10 input-bordered w-full max-w-sm my-1" />
+                                    <input type="text" id="father" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="father_name" />
                                 </span>
                                 <span class="w-72">
                                     <label for="father_address">Father's Address:</label>
-                                    <input type="text" id="father_address" class="input h-10 input-bordered w-full max-w-sm my-1">
+                                    <input type="text" id="father_address" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="father_address" />
                                 </span>
                                 <span class="w-72">
                                     <label for="father_contact_number">Contact Number:</label>
-                                    <input type="tel" id="father_contact_number" class="input h-10 input-bordered w-full max-w-sm my-1">
+                                    <input type="tel" id="father_contact_number" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="father_contact" />
                                 </span>
                                 <span class="w-72">
                                     <label for="father_occupation">Occupation:</label>
-                                    <input type="text" id="father_occupation" class="input h-10 input-bordered w-full max-w-sm my-1">
+                                    <input type="text" id="father_occupation" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="father_occupation" />
                                 </span>
                             </div>
                             <div class="flex w-full gap-10 justify-center">
                                 <span class="w-72">
                                     <label for="mother">Mother's Name:</label>
-                                    <input type="text" id="mother" class="input h-10 input-bordered w-full max-w-sm my-1" />
+                                    <input type="text" id="mother" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="mother_name" />
                                 </span>
                                 <span class="w-72">
                                     <label for="mother_address">Mother's Address:</label>
-                                    <input type="text" id="mother_address" class="input h-10 input-bordered w-full max-w-sm my-1">
+                                    <input type="text" id="mother_address" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="mother_address" />
                                 </span>
                                 <span class="w-72">
                                     <label for="mother_contact_number">Contact Number:</label>
-                                    <input type="tel" id="mother_contact_number" class="input h-10 input-bordered w-full max-w-sm my-1">
+                                    <input type="tel" id="mother_contact_number" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="mother_contact" />
                                 </span>
                                 <span class="w-72">
                                     <label for="mother_occupation">Occupation:</label>
-                                    <input type="text" id="mother_occupation" class="input h-10 input-bordered w-full max-w-sm my-1">
+                                    <input type="text" id="mother_occupation" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="mother_occupation" />
                                 </span>
                             </div>
                             <div class="flex w-full gap-10 justify-center">
                                 <span class="w-72">
                                     <label for="guardian">Guardian's Name:</label>
-                                    <input type="text" id="guardian" class="input h-10 input-bordered w-full max-w-sm my-1" />
+                                    <input type="text" id="guardian" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="guardian_name" />
                                 </span>
                                 <span class="w-72">
                                     <label for="guardian_address">Address:</label>
-                                    <input type="text" id="guardian_address" class="input h-10 input-bordered w-full max-w-sm my-1">
+                                    <input type="text" id="guardian_address" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="guardian_address" />
                                 </span>
                                 <span class="w-72">
                                     <label for="guardian_contact_number">Contact Number:</label>
-                                    <input type="tel" id="guardian_contact_number" class="input h-10 input-bordered w-full max-w-sm my-1">
+                                    <input type="tel" id="guardian_contact_number" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="guardian_contact" />
                                 </span>
                                 <span class="w-72">
                                     <label for="guardian_occupation">Occupation:</label>
-                                    <input type="text" id="guardian_occupation" class="input h-10 input-bordered w-full max-w-sm my-1">
+                                    <input type="text" id="guardian_occupation" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="guardian_occupation" />
                                 </span>
                             </div>
                             <div class="flex w-full justify-between px-6">
@@ -158,7 +158,7 @@
                                         <div class="label">
                                             <span>Parent's Relationship Status</span>
                                         </div>
-                                        <select class="select select-bordered">
+                                        <select class="select select-bordered" wire:model="parents_relation_status">
                                             <option disabled selected>Pick one</option>
                                             <option>Living Together</option>
                                             <option>Separated</option>
@@ -172,7 +172,7 @@
                                         <div class="label">
                                             <span>Living Arrangement</span>
                                         </div>
-                                        <select class="select select-bordered ">
+                                        <select class="select select-bordered " wire:model="living_arrangement">
                                             <option disabled selected>Pick one</option>
                                             <option>With both parents</option>
                                             <option>with one parent</option>
@@ -186,7 +186,7 @@
                                         <div class="label">
                                             <span>Sibling Rank:</span>
                                         </div>
-                                        <select class="select select-bordered ">
+                                        <select class="select select-bordered " wire:model="sibling_rank">
                                             <option disabled selected>Pick one</option>
                                             <option>1st</option>
                                             <option>2nd</option>
@@ -206,14 +206,14 @@
                             <div class="flex w-full gap-10 justify-center">
                                 <span class="w-72">
                                     <label for="name_1">Name:</label>
-                                    <input type="text" id="name_1" class="input h-10 input-bordered w-full max-w-sm my-1" />
+                                    <input type="text" id="name_1" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="sibling1_name" />
                                 </span>
                                 <span class="w-72">
                                     <label class="form-control w-full max-w-xs">
                                         <div class="label p-0 my-0.5">
                                             <span>Sex:</span>
                                         </div>
-                                        <select class="select select-bordered select-sm h-10">
+                                        <select class="select select-bordered select-sm h-10" wire:model="sibling1_sex">
                                             <option disabled selected>Pick one</option>
                                             <option>Male</option>
                                             <option>Female</option>
@@ -222,24 +222,24 @@
                                 </span>
                                 <span class="w-72">
                                     <label for="age_1">Age:</label>
-                                    <input type="text" id="age_1" class="input h-10 input-bordered w-full max-w-sm my-1">
+                                    <input type="number" id="age_1" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="sibling1_age" />
                                 </span>
                                 <span class="w-72">
                                     <label for="school_company">School/Company:</label>
-                                    <input type="text" id="school_company" class="input h-10 input-bordered w-full max-w-sm my-1">
+                                    <input type="text" id="school_company" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="sibling1_school_comp" />
                                 </span>
                             </div>
                             <div class="flex w-full gap-10 justify-center">
                                 <span class="w-72">
                                     <label for="name_2">Name:</label>
-                                    <input type="text" id="name_2" class="input h-10 input-bordered w-full max-w-sm my-1" />
+                                    <input type="text" id="name_2" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="sibling2_name" />
                                 </span>
                                 <span class="w-72">
                                     <label class="form-control w-full max-w-xs">
                                         <div class="label p-0 my-0.5">
                                             <span>Sex:</span>
                                         </div>
-                                        <select class="select select-bordered select-sm h-10 ">
+                                        <select class="select select-bordered select-sm h-10 " wire:model="sibling2_sex">
                                             <option disabled selected>Pick one</option>
                                             <option>Male</option>
                                             <option>Female</option>
@@ -248,24 +248,24 @@
                                 </span>
                                 <span class="w-72">
                                     <label for="age_2">Age:</label>
-                                    <input type="text" id="age_2" class="input h-10 input-bordered w-full max-w-sm my-1">
+                                    <input type="number" id="age_2" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="sibling2_age" />
                                 </span>
                                 <span class="w-72">
                                     <label for="school_company_2">School/Company:</label>
-                                    <input type="text" id="school_company_2" class="input h-10 input-bordered w-full max-w-sm my-1">
+                                    <input type="text" id="school_company_2" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="sibling2_school_comp" />
                                 </span>
                             </div>
                             <div class="flex w-full gap-10 justify-center">
                                 <span class="w-72">
                                     <label for="name_3">Name:</label>
-                                    <input type="text" id="name_3" class="input h-10 input-bordered w-full max-w-sm my-1" />
+                                    <input type="text" id="name_3" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="sibling3_name" />
                                 </span>
                                 <span class="w-72">
                                     <label class="form-control w-full max-w-xs">
                                         <div class="label p-0 my-0.5">
                                             <span>Sex:</span>
                                         </div>
-                                        <select class="select select-bordered select-sm h-10">
+                                        <select class="select select-bordered select-sm h-10" wire:model="sibling3_sex">
                                             <option disabled selected>Pick one</option>
                                             <option>Male</option>
                                             <option>Female</option>
@@ -274,11 +274,11 @@
                                 </span>
                                 <span class="w-72">
                                     <label for="age_3">Age:</label>
-                                    <input type="text" id="age_3" class="input h-10 input-bordered w-full max-w-sm my-1">
+                                    <input type="number" id="age_3" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="sibling3_age">
                                 </span>
                                 <span class="w-72">
                                     <label for="school_company_3">School/Company:</label>
-                                    <input type="text" id="school_company_3" class="input h-10 input-bordered w-full max-w-sm my-1">
+                                    <input type="text" id="school_company_3" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="sibling3_school_comp">
                                 </span>
                             </div>
                         </div>
@@ -296,41 +296,41 @@
                 <div class="flex w-4/5 justify-center gap-4 items-center bg-slate-100 p-2">
                     <span class="w-96">
                         <label for="elementary">Elementary School:</label>
-                        <input type="text" id="elementary" class="input h-10 input-bordered w-full max-w-lg my-1" />
+                        <input type="text" id="elementary" class="input h-10 input-bordered w-full max-w-lg my-1" wire:model="elem_school" />
                     </span>
                     <span class="w-max">
                         <label for="acad_elem" class="text-sm">Academic & Extra-Curricular Awards/Citations Received/Membership in Organizations:</label>
-                        <textarea id="acad_elem" class="textarea textarea-bordered w-full"></textarea>
+                        <textarea id="acad_elem" class="textarea textarea-bordered w-full" wire:model="elem_achievements"></textarea>
                     </span>
                 </div>
                 <div class="flex w-4/5 justify-center items-center gap-4 bg-slate-100 p-2">
                     <span class="w-96">
                         <label for="secondary">Secondary School:</label>
-                        <input type="text" id="secondary" class="input h-10 input-bordered w-full max-w-lg my-1" />
+                        <input type="text" id="secondary" class="input h-10 input-bordered w-full max-w-lg my-1" wire:model="secondary_school" />
                     </span>
                     <span class="w-max">
                         <label for="acad_second" class="text-sm">Academic & Extra-Curricular Awards/Citations Received/Membership in Organizations:</label>
-                        <textarea id="acad_second" class="textarea textarea-bordered w-full"></textarea>
+                        <textarea id="acad_second" class="textarea textarea-bordered w-full" wire:model="secondary_achievements"></textarea>
                     </span>
                 </div>
                 <div class="flex w-4/5 justify-center items-center gap-4 bg-slate-100 p-2">
                     <span class="w-96">
                         <label for="tertiary">Tertiary School:</label>
-                        <input type="text" id="tertiary" class="input h-10 input-bordered w-full max-w-lg my-1" />
+                        <input type="text" id="tertiary" class="input h-10 input-bordered w-full max-w-lg my-1" wire:model="tertiary_school" />
                     </span>
                     <span class="w-max">
                         <label for="acad_third" class="text-sm">Academic & Extra-Curricular Awards/Citations Received/Membership in Organizations:</label>
-                        <textarea id="acad_third" class="textarea textarea-bordered w-full"></textarea>
+                        <textarea id="acad_third" class="textarea textarea-bordered w-full" wire:model="tertiary_achievements"></textarea>
                     </span>
                 </div>
                 <div class="flex w-4/5 justify-center items-center gap-4 bg-slate-100 p-2">
                     <span class="w-96">
                         <label for="others">Others:</label>
-                        <input type="text" id="others" class="input h-10 input-bordered w-full max-w-lg my-1" />
+                        <input type="text" id="others" class="input h-10 input-bordered w-full max-w-lg my-1" wire:model="other_school" />
                     </span>
                     <span class="w-max">
                         <label for="acad_other" class="text-sm">Academic & Extra-Curricular Awards/Citations Received/Membership in Organizations:</label>
-                        <textarea id="acad_other" class="textarea textarea-bordered w-full"></textarea>
+                        <textarea id="acad_other" class="textarea textarea-bordered w-full" wire:model="other_achievements"></textarea>
                     </span>
                 </div>
             </div>
@@ -348,7 +348,7 @@
                             <div class="label h-12">
                                 <span>Rate current physical health</span>
                             </div>
-                            <select class="select select-bordered w-full">
+                            <select class="select select-bordered w-full" wire:model="current_health">
                                 <option disabled selected>Pick one</option>
                                 <option>Poor</option>
                                 <option>Good</option>
@@ -363,7 +363,7 @@
                             <div class="label h-12">
                                 <span>Do you engage in a physical activity or exercise?</span>
                             </div>
-                            <select class="select select-bordered">
+                            <select class="select select-bordered" wire:model="physical_acts">
                                 <option disabled selected>Pick one</option>
                                 <option>Not at All</option>
                                 <option>Occassionally</option>
@@ -376,7 +376,7 @@
                             <div class="label h-12">
                                 <span>Are you presently under a doctor's care?</span>
                             </div>
-                            <select class="select select-bordered ">
+                            <select class="select select-bordered " wire:model="under_doc_care">
                                 <option disabled selected>Pick one</option>
                                 <option>Yes</option>
                                 <option>No</option>
@@ -387,7 +387,7 @@
                         <div class="label h-12">
                             <span for="reason">Reason for Doctor Care:</span>
                         </div>
-                        <input type="text" id="reason" class="input h-10 input-bordered w-full max-w-lg my-1" />
+                        <input type="text" id="reason" class="input h-10 input-bordered w-full max-w-lg my-1" wire:model="doc_reason" />
                     </span>
                 </div>
                 <div class="flex w-4/5 justify-between items-center bg-slate-100 p-2">
@@ -396,7 +396,7 @@
                             <div class="label">
                                 <span>Are you presently taking any medication?</span>
                             </div>
-                            <select class="select select-bordered">
+                            <select class="select select-bordered" wire:model="taking_medication">
                                 <option disabled selected>Pick one</option>
                                 <option>Yes</option>
                                 <option>No</option>
@@ -407,13 +407,13 @@
                         <div class="label h-12">
                             <span for="reason_med">If yes, reason of medication:</span>
                         </div>
-                        <input type="text" id="reason_med" class="input h-10 input-bordered w-96 max-w-lg" />
+                        <input type="text" id="reason_med" class="input h-10 input-bordered w-96 max-w-lg" wire:model="medication_reason" />
                     </span>
                     <span class="w-max">
                         <div class="label h-12">
                             <span for="meds">What kind of medicine?:</span>
                         </div>
-                        <input type="text" id="reason_meds" class="input h-10 input-bordered w-96  max-w-lg" />
+                        <input type="text" id="reason_meds" class="input h-10 input-bordered w-96  max-w-lg" wire:model="medicine" />
                     </span>
                 </div>
                 <div class="flex w-4/5 gap-4 justify-between items-center bg-slate-100 p-2">
@@ -422,7 +422,7 @@
                             <div class="label h-20">
                                 <span>Have you ever received any psychological or counseling services?</span>
                             </div>
-                            <select class="select select-bordered">
+                            <select class="select select-bordered" wire:model="received_services">
                                 <option disabled selected>Pick one</option>
                                 <option>Yes</option>
                                 <option>No</option>
@@ -433,14 +433,14 @@
                         <div class="label h-20">
                             <span for="reason_2">If yes, specify:</span>
                         </div>
-                        <input type="text" id="reason_2" class="input h-10 input-bordered w-72" />
+                        <input type="text" id="reason_2" class="input h-10 input-bordered w-72" wire:model="received_psych_services" />
                     </span>
                     <span class="w-max">
                         <label class="form-control w-full">
                             <div class="label h-20">
                                 <span>Are you currently receiving any psychological services?</span>
                             </div>
-                            <select class="select select-bordered">
+                            <select class="select select-bordered" wire:model="received_psych_services">
                                 <option disabled selected>Pick one</option>
                                 <option>Yes</option>
                                 <option>No</option>
@@ -451,7 +451,7 @@
                         <div class="label h-20">
                             <span for="reason_3">If yes, specify:</span>
                         </div>
-                        <input type="text" id="reason_3" class="input h-10 input-bordered w-72" />
+                        <input type="text" id="reason_3" class="input h-10 input-bordered w-72" wire:model="sibling3_school_comp" />
                     </span>
                 </div>
             </div>
@@ -469,15 +469,15 @@
                 <div class="flex w-4/5 gap-12 justify-center">
                     <span class="w-full">
                         <label for="choice_1">1st Choice:</label>
-                        <input type="text" id="choice_1" class="input h-10 input-bordered w-full max-w-sm my-1" />
+                        <input type="text" id="choice_1" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="course_choice1" />
                     </span>
                     <span class="w-full">
                         <label for="choice_2">2nd Choice:</label>
-                        <input type="text" id="choice_2" class="input h-10 input-bordered w-full max-w-sm my-1" />
+                        <input type="text" id="choice_2" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="course_choice2" />
                     </span>
                     <span class="w-full">
                         <label for="choice_3">3rd Choice:</label>
-                        <input type="text" id="choice_3" class="input h-10 input-bordered w-full max-w-sm my-1" />
+                        <input type="text" id="choice_3" class="input h-10 input-bordered w-full max-w-sm my-1" wire:model="course_choice3" />
                     </span>
                 </div>
             </div>
@@ -552,7 +552,7 @@
                 <div class="flex w-4/5  justify-center ">
                     <span class="w-full my-2 ">
                         <label for="how"><strong> How do you see yourself a year after finishing your program? 5 years after finishing your program?</strong></label>
-                        <textarea id="how" class="textarea textarea-bordered w-full my-2"></textarea>
+                        <textarea id="how" class="textarea textarea-bordered w-full my-2" wire:model="after_program"></textarea>
                     </span>
                 </div>
             </div>
@@ -567,19 +567,19 @@
                 <div class="flex w-4/5  justify-center ">
                     <span class="w-full my-2 ">
                         <label for="char" class="">Characteristics that best describe oneself:</label>
-                        <textarea id="char" class="textarea textarea-bordered w-full my-2"></textarea>
+                        <textarea id="char" class="textarea textarea-bordered w-full my-2" wire:model="characteristics"></textarea>
                     </span>
                 </div>
                 <div class="flex w-4/5  justify-center ">
                     <span class="w-full my-2 ">
                         <label for="skills" class="">Special Skills/Talents/Hobbies/Special Interests:</label>
-                        <textarea id="skills" class="textarea textarea-bordered w-full my-2"></textarea>
+                        <textarea id="skills" class="textarea textarea-bordered w-full my-2" wire:model="skills"></textarea>
                     </span>
                 </div>
                 <div class="flex w-4/5  justify-center ">
                     <span class="w-full my-2 ">
                         <label for="ambitions" class="">Ambitions/Goals:</label>
-                        <textarea id="ambitions" class="textarea textarea-bordered w-full my-2"></textarea>
+                        <textarea id="ambitions" class="textarea textarea-bordered w-full my-2" wire:model="goals"></textarea>
                     </span>
                 </div>
             </div>

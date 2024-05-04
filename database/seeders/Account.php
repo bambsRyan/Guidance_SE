@@ -15,6 +15,7 @@ class Account extends Seeder
     {
         $dummyaccounts = [
             [
+                'id' => '202012021',
                 'student_id' => '202012021',
                 'last_name' => 'Doe',
                 'first_name' => 'John',
@@ -33,6 +34,7 @@ class Account extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => '202120122',
                 'student_id' => '202120122',
                 'last_name' => 'Doe',
                 'first_name' => 'Jane',
@@ -51,6 +53,7 @@ class Account extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => '202021212',
                 'student_id' => '202021212',
                 'last_name' => 'Doe',
                 'first_name' => 'Justin',
@@ -69,6 +72,7 @@ class Account extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => '202020222',
                 'student_id' => '202020222',
                 'last_name' => 'Doe',
                 'first_name' => 'Jasmine',
