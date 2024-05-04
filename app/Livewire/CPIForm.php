@@ -55,7 +55,6 @@ class CPIForm extends Component
     public $current_health;
     public $physical_acts;
     public $under_doc_care;
-    public $doctor_name;
     public $doc_reason;
     public $taking_medication;
     public $medication_reason;
@@ -126,7 +125,6 @@ class CPIForm extends Component
             'current_health' => $this->current_health,
             'physical_acts' => $this->physical_acts,
             'under_doc_care' => $this->under_doc_care,
-            'doctor_name' => $this->doctor_name,
             'doc_reason' => $this->doc_reason,
             'taking_medication' => $this->taking_medication,
             'medication_reason' => $this->medication_reason,
@@ -136,7 +134,7 @@ class CPIForm extends Component
             'course_choice1' => $this->course_choice1,
             'course_choice2' => $this->course_choice2,
             'course_choice3' => $this->course_choice3,
-            'course_factors' => $this->course_factors,
+            //  'course_factors' => $this->course_factors,
             'after_program' => $this->after_program,
             'characteristics' => $this->characteristics,
             'skills' => $this->skills,
