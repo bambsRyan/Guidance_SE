@@ -29,7 +29,7 @@
     <div class="h-screen w-screen flex flex-col">
             @livewire('Topnavbar')
             <div class="flex-1 flex gap-1 h-full">
-                @livewire('sidenavbar')
+                @livewire('head-sidenavbar')
                 <div class="w-full p-6 flex flex-col h-full">
                     <h1 class="text-2xl bg-slate-300 p-2 border rounded-lg font-bold text-center">Events</h1>
                     <div class="flex gap-2 flex-col h-full"> 

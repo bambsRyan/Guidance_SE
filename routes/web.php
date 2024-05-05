@@ -17,6 +17,9 @@ Route::get('/counselor_history', function () {
 Route::get('/head_appointment', function () {
     return view('Counselor_Head/appointment');
 }); 
+Route::get('/head_assignment', function () {
+    return view('Counselor_Head/Assignment');
+});
 Route::get('/head_dashboard', function () {
     return view('Counselor_Head/Dashboard');
 });

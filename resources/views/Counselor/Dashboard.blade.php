@@ -37,7 +37,6 @@
                     </div>
                     </div>
                     <div class="w-72 h-72 ">
-
                     </div>
                 </div>
             </div>
